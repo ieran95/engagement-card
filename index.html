@@ -1,0 +1,913 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Engagement</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: #fff8f5;
+            color: #5a4141;
+            font-family: "Montserrat", sans-serif;
+        }
+
+
+        /* =====================================================
+           MAIN CARD
+        ===================================================== */
+
+        .invitation {
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(255, 255, 255, 0.95) 0%,
+                    rgba(255, 248, 245, 0.9) 45%,
+                    rgba(250, 229, 226, 0.95) 100%
+                );
+        }
+
+
+        /* =====================================================
+           DECORATIVE BORDER
+        ===================================================== */
+
+        .invitation::before {
+            content: "";
+            position: absolute;
+
+            inset: 18px;
+
+            border: 1px solid rgba(170, 105, 105, 0.25);
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .content {
+            position: relative;
+            z-index: 10;
+
+            width: min(700px, 100%);
+
+            text-align: center;
+
+            padding: 70px 35px;
+
+            animation: fadeUp 1.5s ease forwards;
+        }
+
+        .small-title {
+            font-size: 12px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+
+            color: #9a7070;
+
+            margin-bottom: 25px;
+        }
+
+        .invite-text {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+            font-weight: 400;
+
+            color: #745858;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =====================================================
+           NAMES
+        ===================================================== */
+
+        .names {
+            font-family: "Great Vibes", cursive;
+
+            font-size: clamp(55px, 10vw, 90px);
+
+            font-weight: 400;
+
+            line-height: 1.1;
+
+            color: #8e5c62;
+
+            margin: 10px 0 20px;
+        }
+
+        .ampersand {
+            display: block;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 28px;
+
+            font-style: italic;
+
+            color: #b88989;
+
+            margin: -5px 0;
+        }
+
+
+        /* =====================================================
+           DIVIDER
+        ===================================================== */
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 15px;
+
+            margin: 25px auto;
+        }
+
+        .divider-line {
+            width: 80px;
+            height: 1px;
+
+            background: #c99d9d;
+        }
+
+        .divider-flower {
+            color: #bd858b;
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           ENGAGEMENT TEXT
+        ===================================================== */
+
+        .occasion {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 32px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #79585b;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           DATE
+        ===================================================== */
+
+        .date {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            letter-spacing: 3px;
+
+            color: #684d50;
+
+            margin-bottom: 8px;
+        }
+
+        .time {
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            color: #9a7777;
+
+            text-transform: uppercase;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           VENUE
+        ===================================================== */
+
+        .venue {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 20px;
+
+            line-height: 1.6;
+
+            color: #795d5d;
+        }
+
+
+        /* =====================================================
+           MESSAGE
+        ===================================================== */
+
+        .message {
+            max-width: 480px;
+
+            margin: 35px auto 0;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            color: #806969;
+        }
+
+
+        /* =====================================================
+           RSVP BUTTON
+        ===================================================== */
+
+        .rsvp {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 12px 30px;
+
+            border: 1px solid #b98787;
+
+            color: #795858;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            transition: all 0.3s ease;
+        }
+
+        .rsvp:hover {
+            background: #9d6d73;
+            color: white;
+        }
+
+
+        /* =====================================================
+           SAKURA TREE - LEFT
+        ===================================================== */
+
+        .sakura-left {
+            position: absolute;
+
+            left: -20px;
+            top: -10px;
+
+            width: 330px;
+            height: 500px;
+
+            pointer-events: none;
+        }
+
+        .branch-left {
+            position: absolute;
+
+            width: 8px;
+            height: 430px;
+
+            left: 110px;
+            top: -40px;
+
+            background: #594542;
+
+            border-radius: 100%;
+
+            transform: rotate(25deg);
+        }
+
+        .branch-left::before {
+            content: "";
+
+            position: absolute;
+
+            width: 6px;
+            height: 220px;
+
+            left: 40px;
+            top: 110px;
+
+            background: #594542;
+
+            border-radius: 100%;
+
+            transform: rotate(-38deg);
+        }
+
+        .branch-left::after {
+            content: "";
+
+            position: absolute;
+
+            width: 5px;
+            height: 180px;
+
+            left: -50px;
+            top: 180px;
+
+            background: #594542;
+
+            border-radius: 100%;
+
+            transform: rotate(48deg);
+        }
+
+
+        /* =====================================================
+           SAKURA TREE - RIGHT
+        ===================================================== */
+
+        .sakura-right {
+            position: absolute;
+
+            right: -30px;
+            bottom: -30px;
+
+            width: 320px;
+            height: 470px;
+
+            pointer-events: none;
+
+            transform: scaleX(-1);
+        }
+
+        .branch-right {
+            position: absolute;
+
+            width: 8px;
+            height: 430px;
+
+            left: 110px;
+            top: 40px;
+
+            background: #594542;
+
+            border-radius: 100%;
+
+            transform: rotate(25deg);
+        }
+
+        .branch-right::before {
+            content: "";
+
+            position: absolute;
+
+            width: 6px;
+            height: 220px;
+
+            left: 40px;
+            top: 110px;
+
+            background: #594542;
+
+            border-radius: 100%;
+
+            transform: rotate(-38deg);
+        }
+
+        .branch-right::after {
+            content: "";
+
+            position: absolute;
+
+            width: 5px;
+            height: 180px;
+
+            left: -50px;
+            top: 180px;
+
+            background: #594542;
+
+            border-radius: 100%;
+
+            transform: rotate(48deg);
+        }
+
+
+        /* =====================================================
+           SAKURA FLOWERS
+        ===================================================== */
+
+        .flower {
+            position: absolute;
+
+            width: 25px;
+            height: 25px;
+
+            background: #f5c8cf;
+
+            border-radius: 50%;
+
+            box-shadow:
+                12px 0 #f5c8cf,
+                -12px 0 #f5c8cf,
+                0 12px #f5c8cf,
+                0 -12px #f5c8cf;
+
+            transform: rotate(45deg);
+        }
+
+        .flower::after {
+            content: "";
+
+            position: absolute;
+
+            width: 8px;
+            height: 8px;
+
+            background: #d9939c;
+
+            border-radius: 50%;
+
+            top: 8px;
+            left: 8px;
+        }
+
+        /* Flower positions */
+
+        .flower-1 {
+            left: 65px;
+            top: 80px;
+        }
+
+        .flower-2 {
+            left: 160px;
+            top: 125px;
+
+            transform: scale(0.8) rotate(20deg);
+        }
+
+        .flower-3 {
+            left: 45px;
+            top: 210px;
+
+            transform: scale(0.7) rotate(10deg);
+        }
+
+        .flower-4 {
+            left: 190px;
+            top: 250px;
+
+            transform: scale(0.9) rotate(30deg);
+        }
+
+        .flower-5 {
+            left: 90px;
+            top: 330px;
+
+            transform: scale(0.65) rotate(45deg);
+        }
+
+        .flower-6 {
+            left: 225px;
+            top: 80px;
+
+            transform: scale(0.65) rotate(20deg);
+        }
+
+
+        /* =====================================================
+           FALLING SAKURA PETALS
+        ===================================================== */
+
+        .petals {
+            position: absolute;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 5;
+        }
+
+        .petal {
+            position: absolute;
+
+            top: -30px;
+
+            width: 12px;
+            height: 8px;
+
+            background: #efb8c2;
+
+            border-radius: 100% 0 100% 0;
+
+            opacity: 0.8;
+
+            animation:
+                fall linear infinite,
+                sway ease-in-out infinite alternate;
+        }
+
+
+        /* Individual petals */
+
+        .petal:nth-child(1) {
+            left: 5%;
+            animation-duration: 9s, 3s;
+            animation-delay: 0s, 0s;
+            transform: rotate(20deg);
+        }
+
+        .petal:nth-child(2) {
+            left: 15%;
+            animation-duration: 12s, 4s;
+            animation-delay: 2s, 1s;
+        }
+
+        .petal:nth-child(3) {
+            left: 25%;
+            animation-duration: 10s, 3s;
+            animation-delay: 4s, 0s;
+        }
+
+        .petal:nth-child(4) {
+            left: 35%;
+            animation-duration: 14s, 5s;
+            animation-delay: 1s, 2s;
+        }
+
+        .petal:nth-child(5) {
+            left: 45%;
+            animation-duration: 11s, 4s;
+            animation-delay: 5s, 1s;
+        }
+
+        .petal:nth-child(6) {
+            left: 55%;
+            animation-duration: 13s, 3s;
+            animation-delay: 3s, 0s;
+        }
+
+        .petal:nth-child(7) {
+            left: 65%;
+            animation-duration: 10s, 4s;
+            animation-delay: 0s, 2s;
+        }
+
+        .petal:nth-child(8) {
+            left: 75%;
+            animation-duration: 15s, 5s;
+            animation-delay: 6s, 0s;
+        }
+
+        .petal:nth-child(9) {
+            left: 85%;
+            animation-duration: 12s, 3s;
+            animation-delay: 2s, 1s;
+        }
+
+        .petal:nth-child(10) {
+            left: 95%;
+            animation-duration: 9s, 4s;
+            animation-delay: 4s, 0s;
+        }
+
+        .petal:nth-child(11) {
+            left: 30%;
+            animation-duration: 16s, 5s;
+            animation-delay: 7s, 2s;
+
+            width: 8px;
+            height: 6px;
+        }
+
+        .petal:nth-child(12) {
+            left: 70%;
+            animation-duration: 13s, 4s;
+            animation-delay: 8s, 1s;
+
+            width: 9px;
+            height: 6px;
+        }
+
+
+        /* =====================================================
+           PETAL ANIMATIONS
+        ===================================================== */
+
+        @keyframes fall {
+
+            0% {
+                top: -30px;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            90% {
+                opacity: 0.8;
+            }
+
+            100% {
+                top: 110vh;
+                opacity: 0;
+            }
+        }
+
+        @keyframes sway {
+
+            0% {
+                margin-left: -35px;
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            100% {
+                margin-left: 35px;
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =====================================================
+           PAGE LOAD ANIMATION
+        ===================================================== */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .invitation {
+                padding: 20px 15px;
+            }
+
+            .invitation::before {
+                inset: 10px;
+            }
+
+            .content {
+                padding: 55px 20px;
+            }
+
+            .small-title {
+                font-size: 10px;
+                letter-spacing: 3px;
+            }
+
+            .invite-text {
+                font-size: 20px;
+            }
+
+            .names {
+                font-size: 60px;
+            }
+
+            .occasion {
+                font-size: 24px;
+                letter-spacing: 2px;
+            }
+
+            .date {
+                font-size: 21px;
+            }
+
+            .venue {
+                font-size: 18px;
+            }
+
+            .message {
+                font-size: 17px;
+            }
+
+            /* Make flowers smaller on mobile */
+
+            .sakura-left {
+                transform: scale(0.65);
+                transform-origin: top left;
+            }
+
+            .sakura-right {
+                transform: scale(0.65) scaleX(-1);
+                transform-origin: bottom right;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <main class="invitation">
+
+
+        <!-- =================================================
+             FALLING PETALS
+        ================================================== -->
+
+        <div class="petals">
+
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+            <span class="petal"></span>
+
+        </div>
+
+
+        <!-- =================================================
+             LEFT SAKURA BRANCH
+        ================================================== -->
+
+        <div class="sakura-left">
+
+            <div class="branch-left"></div>
+
+            <div class="flower flower-1"></div>
+            <div class="flower flower-2"></div>
+            <div class="flower flower-3"></div>
+            <div class="flower flower-4"></div>
+            <div class="flower flower-5"></div>
+            <div class="flower flower-6"></div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT SAKURA BRANCH
+        ================================================== -->
+
+        <div class="sakura-right">
+
+            <div class="branch-right"></div>
+
+            <div class="flower flower-1"></div>
+            <div class="flower flower-2"></div>
+            <div class="flower flower-3"></div>
+            <div class="flower flower-4"></div>
+            <div class="flower flower-5"></div>
+            <div class="flower flower-6"></div>
+
+        </div>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <section class="content">
+
+            <p class="small-title">
+                With Joy in Our Hearts
+            </p>
+
+
+            <p class="invite-text">
+                Together with our families
+            </p>
+
+
+            <h1 class="names">
+
+                Your Name
+
+                <span class="ampersand">
+                    &
+                </span>
+
+                Her Name
+
+            </h1>
+
+
+            <div class="divider">
+
+                <span class="divider-line"></span>
+
+                <span class="divider-flower">
+                    ❀
+                </span>
+
+                <span class="divider-line"></span>
+
+            </div>
+
+
+            <h2 class="occasion">
+                Are Engaged
+            </h2>
+
+
+            <p class="date">
+                Saturday, 20 December 2026
+            </p>
+
+
+            <p class="time">
+                11:00 AM
+            </p>
+
+
+            <p class="venue">
+                Beautiful Garden Venue<br>
+                Kuala Lumpur, Malaysia
+            </p>
+
+
+            <p class="message">
+                We would be delighted to have you join us
+                as we celebrate this beautiful beginning
+                of our journey together.
+            </p>
+
+
+            <!--
+                Change the "#" to your RSVP link later.
+            -->
+
+            <a
+                href="#"
+                class="rsvp"
+            >
+                RSVP
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+```
