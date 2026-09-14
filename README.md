@@ -1,20 +1,26 @@
-# Fina & Syafiq Vue/Vite E-card
+# Engagement Card — Vue + Vite v2
 
-## Edit text
-Edit the `invitation` object at the top of `src/App.vue`. All invitation text is real HTML/Vue text and is NOT baked into the backgrounds.
+Latest requested version:
+- 5 regenerated separate watercolor/Sakura backgrounds
+- no white/black frame intentionally included in the assets
+- Sakura falling-petal animation
+- venue/location displayed directly on the page
+- location popup with Google Maps
+- staggered text entrance animation on page open
+- background music
+- 5-way background switching
 
-## Backgrounds
-Four separate text-free watercolor JPGs are in `src/assets/`. Change the `backgrounds` array in `src/App.vue` to add or replace themes.
+Run:
+```bash
+npm install
+npm run dev
+```
 
-## Falling leaves
-The leaves are HTML elements animated with CSS. Change `Array.from({ length: 22 })` in `src/App.vue` to control quantity. Animation is in `src/style.css` under `@keyframes leaf-fall` and `@keyframes leaf-sway`.
+Put your own/licensed MP3 at:
+```text
+public/music/instrumental.mp3
+```
 
-## Music
-Replace `public/audio/ambient-garden.wav` with your own track if desired. Browsers usually require a user click before audio can start.
+Change invitation details and `locationQuery` in `src/App.vue`.
 
-## Run
-`npm install`
-`npm run dev`
-
-## GitHub Pages
-Push to `main`, enable GitHub Actions as the Pages source in repository Settings > Pages, and the included workflow will deploy it.
+The Google Maps iframe/search approach does not require a Maps API key.
