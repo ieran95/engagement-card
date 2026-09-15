@@ -189,8 +189,9 @@ button { border: 0; }
 
 .location-hint {
   margin: 0 0 11px;
-  color: #8b6b62;
+  color: #7a463a;
   font-size: 12px;
+  font-weight: 700;
   font-style: italic;
   letter-spacing: .02em;
   text-shadow: 0 1px 1px rgba(255,250,246,.9), 0 1px 6px rgba(255,250,246,.7);
@@ -304,24 +305,35 @@ button { border: 0; }
   background: rgba(132,77,65,.8);
   pointer-events: none;
 }
-.player-controls { display: flex; align-items: center; justify-content: center; gap: 25px; margin-top: 7px; }
+.player-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 7px; }
 .player-controls button {
-  width: 18px;
-  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
   padding: 0;
   color: #704339;
   background: transparent;
   cursor: pointer;
-  font-size: 15px;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+.player-controls button:hover { transform: scale(1.08); }
+.player-controls button svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
 }
 .player-controls .play-button {
-  width: 26px;
-  height: 26px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   color: #fff;
-  background: rgba(133,79,67,.82);
-  font-size: 12px;
+  background: linear-gradient(135deg, #b15b48, #805044);
+  box-shadow: 0 5px 16px rgba(112, 66, 56, .35), inset 0 1px 0 rgba(255,255,255,.25);
 }
+.player-controls .play-button svg { width: 18px; height: 18px; fill: #fff; }
+.player-controls .play-button .play-icon { transform: translateX(1px); }
 
 .music-fab {
   position: absolute;
