@@ -1,7 +1,7 @@
 <script setup>
 import { computed, nextTick, onMounted, onUnmounted, ref } from "vue";
 
-const currentBackground = ref(6);
+const currentBackground = ref(5);
 const musicPlaying = ref(false);
 const showLocation = ref(false);
 const hasEntered = ref(false);
@@ -239,7 +239,7 @@ onUnmounted(() => {
         ></span>
       </div>
 
-      <!-- <div class="background-switcher" aria-label="Pilih latar belakang">
+      <div class="background-switcher" aria-label="Pilih latar belakang">
         <button
           v-for="(background, index) in backgrounds"
           :key="background.src"
@@ -251,7 +251,7 @@ onUnmounted(() => {
         >
           <img :src="background.src" :alt="background.name" />
         </button>
-      </div> -->
+      </div>
 
       <!-- <button
         class="music-fab"
