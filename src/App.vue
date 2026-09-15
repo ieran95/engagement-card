@@ -30,11 +30,12 @@ const locationQuery =
   "Dewan Majlis Seri Anggerik, Jalan Melati 4, 43000 Kajang, Selangor";
 
 const backgrounds = [
-  { name: "Background 1", src: "/backgrounds/background-1.jpg" },
-  { name: "Background 2", src: "/backgrounds/background-2.jpg" },
+  // { name: "Background 1", src: "/backgrounds/background-1.jpg" },
+  // { name: "Background 2", src: "/backgrounds/background-2.jpg" },
   { name: "Background 3", src: "/backgrounds/background-3.jpg" },
   { name: "Background 4", src: "/backgrounds/background-4.jpg" },
-  { name: "Background 5", src: "/backgrounds/background-5.jpg" },
+  { name: "Background 5", src: "/backgrounds/background-5.jpeg" },
+  { name: "Background 4", src: "/backgrounds/background-6.jpg" },
 ];
 
 const petals = Array.from({ length: 34 }, (_, i) => ({
@@ -226,7 +227,7 @@ onUnmounted(() => {
         ></span>
       </div>
 
-      <!-- <div class="background-switcher" aria-label="Pilih latar belakang">
+      <div class="background-switcher" aria-label="Pilih latar belakang">
         <button
           v-for="(background, index) in backgrounds"
           :key="background.src"
@@ -238,7 +239,7 @@ onUnmounted(() => {
         >
           <img :src="background.src" :alt="background.name" />
         </button>
-      </div> -->
+      </div>
 
       <!-- <button
         class="music-fab"
@@ -278,32 +279,44 @@ onUnmounted(() => {
 
         <p class="description entrance entrance-4">{{ invitation.message }}</p>
 
+        <div class="location-hint entrance entrance-5" aria-hidden="true">
+          <span class="hint-arrow">⌄</span> Klik untuk lihat lokasi
+        </div>
         <button
           class="location-button entrance entrance-5"
           type="button"
           @click="showLocation = true"
         >
-          <span class="pin">⌖</span>
-          <span>Lihat Lokasi Majlis</span>
-          <span class="arrow">›</span>
+          <span class="pin">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"
+              />
+            </svg>
+          </span>
+          <span class="location-copy">{{ invitation.locationName }}</span>
+          <span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M9 6l6 6-6 6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
         </button>
 
-        <div class="location-on-page entrance entrance-6">
-          <span class="location-icon">⌖</span>
-          <div>
-            <strong>{{ invitation.locationName }}</strong>
-            <span>{{ invitation.locationAddress }}</span>
-          </div>
-        </div>
-
         <div class="music-player entrance entrance-7">
-          <div class="song-title">
-            <span class="music-note">♫</span
-            ><span>{{ invitation.songTitle }}</span>
+          <!-- <div class="song-title">
+            <span class="music-note">♫</span>
+            <span>{{ invitation.songTitle }}</span>
           </div>
           <div class="player-line" @click="seek">
             <span :style="{ width: progress + '%' }"></span>
-          </div>
+          </div> -->
           <div class="player-controls">
             <button type="button" aria-label="Sebelumnya">‹</button>
             <button class="play-button" type="button" @click="toggleMusic">
