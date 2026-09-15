@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
 :root {
   font-family: "Cormorant Garamond", Georgia, serif;
@@ -106,7 +106,7 @@ button { border: 0; }
   margin: 0;
   color: #805044;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .23em;
   line-height: 1.45;
   text-shadow: 0 1px 1px rgba(255,250,246,.9), 0 1px 8px rgba(255,250,246,.7);
@@ -129,7 +129,7 @@ button { border: 0; }
   margin: 10px 0 6px;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 26px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -183,6 +183,7 @@ button { border: 0; }
   margin: 20px 0 16px;
   color: #7a463a;
   font-size: 14px;
+  font-weight: 600;
   line-height: 1.45;
   text-shadow: 0 1px 1px rgba(255,250,246,.9), 0 1px 8px rgba(255,250,246,.7);
 }
@@ -251,7 +252,7 @@ button { border: 0; }
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: .04em;
   line-height: 1;
 }
@@ -283,7 +284,7 @@ button { border: 0; }
 }
 
 .music-player { width: min(100%,240px); margin-top: 14px; }
-.song-title { display: flex; align-items: center; justify-content: center; gap: 7px; color: #805044; font-size: 12px; }
+.song-title { display: flex; align-items: center; justify-content: center; gap: 7px; color: #805044; font-size: 12px; font-weight: 700; }
 .music-note { font-size: 15px; }
 
 .player-line {
@@ -412,7 +413,7 @@ button { border: 0; }
   font-size: 24px;
 }
 
-.modal-eyebrow { margin: 0 0 2px; font-size: 11px; letter-spacing: .22em; }
+.modal-eyebrow { margin: 0 0 2px; font-size: 11px; font-weight: 700; letter-spacing: .22em; }
 .location-modal h2 { margin: 0 0 13px; font-family: Allura,cursive; color: #b15b48; font-size: 46px; font-weight: 400; }
 
 .map { display: block; width: 100%; height: 240px; border: 0; border-radius: 10px; background: #eee; }
