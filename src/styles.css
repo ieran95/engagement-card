@@ -360,8 +360,8 @@ button { border: 0; }
 .modal-enter-from .location-modal, .modal-leave-to .location-modal { transform: translateY(15px) scale(.98); opacity: 0; }
 
 @media (max-width:600px) {
-  .page { padding: 0; }
-  .invitation-shell { width: 100vw; height: 100vh; height: 100dvh; box-shadow: none; }
+  .page { padding: 0; display: block; min-height: 100vh; min-height: 100dvh; }
+  .invitation-shell { width: 100vw; height: 100vh; height: 100dvh; min-height: 0; box-shadow: none; }
   .content { padding: 25px 20px; }
 }
 
