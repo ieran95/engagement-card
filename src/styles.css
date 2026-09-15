@@ -80,10 +80,13 @@ button { border: 0; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: safe center;
   text-align: center;
   padding: 25px 54px;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
+.content::-webkit-scrollbar { display: none; }
 
 .entrance {
   opacity: 0;
@@ -102,7 +105,7 @@ button { border: 0; }
 .eyebrow {
   margin: 0;
   color: #805044;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: .23em;
   line-height: 1.45;
@@ -115,7 +118,7 @@ button { border: 0; }
   align-items: center;
   color: #ad5947;
   font-family: Allura, "Brush Script MT", cursive;
-  font-size: clamp(62px,13vw,82px);
+  font-size: clamp(60px,15vw,92px);
   font-weight: 400;
   line-height: .78;
   text-shadow: 0 1px 0 rgba(255,255,255,.45);
@@ -124,7 +127,7 @@ button { border: 0; }
 .names small {
   margin: 10px 0 6px;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 400;
   line-height: 1;
 }
@@ -142,8 +145,8 @@ button { border: 0; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
-  font-size: 11px;
+  gap: 6px;
+  font-size: 13px;
   letter-spacing: .08em;
 }
 
@@ -157,23 +160,23 @@ button { border: 0; }
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: baseline;
-  gap: 6px;
-  padding: 0 11px;
+  gap: 7px;
+  padding: 0 13px;
   border-left: 1px dotted rgba(111,64,54,.55);
   border-right: 1px dotted rgba(111,64,54,.55);
   line-height: 1;
 }
 
-.date-main .month { font-size: 9px; }
-.date-main strong { font-size: 30px; font-weight: 500; }
-.date-main span:last-child { font-size: 10px; }
+.date-main .month { font-size: 11px; }
+.date-main strong { font-size: 36px; font-weight: 500; }
+.date-main span:last-child { font-size: 12px; }
 
 .description {
   width: min(100%,315px);
-  margin: 18px 0 14px;
+  margin: 20px 0 16px;
   color: #805044;
-  font-size: 10.5px;
-  line-height: 1.35;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .location-button {
@@ -181,39 +184,39 @@ button { border: 0; }
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-width: 174px;
-  padding: 8px 13px 8px 12px;
+  min-width: 190px;
+  padding: 10px 16px 10px 14px;
   border-radius: 999px;
   cursor: pointer;
   color: #fffaf7;
   background: rgba(142,86,72,.84);
   box-shadow: 0 4px 12px rgba(91,56,48,.12);
-  font-size: 10.5px;
+  font-size: 13px;
   transition: transform 180ms ease, background 180ms ease;
 }
 .location-button:hover { transform: translateY(-1px); background: rgba(129,73,60,.92); }
-.location-button .pin { font-size: 14px; }
-.location-button .arrow { font-size: 17px; line-height: 10px; }
+.location-button .pin { font-size: 16px; }
+.location-button .arrow { font-size: 19px; line-height: 12px; }
 
 .location-on-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  width: min(100%,280px);
-  margin-top: 9px;
+  gap: 9px;
+  width: min(100%,300px);
+  margin-top: 10px;
   color: #805044;
   text-align: left;
 }
 
-.location-icon { flex: 0 0 auto; font-size: 17px; }
-.location-on-page div { display: flex; flex-direction: column; line-height: 1.2; }
-.location-on-page strong { font-size: 10px; font-weight: 600; }
-.location-on-page span:not(.location-icon) { margin-top: 2px; color: #8b6b62; font-size: 8.5px; }
+.location-icon { flex: 0 0 auto; font-size: 20px; }
+.location-on-page div { display: flex; flex-direction: column; line-height: 1.25; }
+.location-on-page strong { font-size: 13px; font-weight: 600; }
+.location-on-page span:not(.location-icon) { margin-top: 2px; color: #8b6b62; font-size: 11px; }
 
-.music-player { width: min(100%,230px); margin-top: 13px; }
-.song-title { display: flex; align-items: center; justify-content: center; gap: 7px; color: #805044; font-size: 9px; }
-.music-note { font-size: 13px; }
+.music-player { width: min(100%,240px); margin-top: 14px; }
+.song-title { display: flex; align-items: center; justify-content: center; gap: 7px; color: #805044; font-size: 12px; }
+.music-note { font-size: 15px; }
 
 .player-line {
   position: relative;
@@ -242,15 +245,15 @@ button { border: 0; }
   color: #704339;
   background: transparent;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 15px;
 }
 .player-controls .play-button {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   color: #fff;
   background: rgba(133,79,67,.82);
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .music-fab {
@@ -330,11 +333,11 @@ button { border: 0; }
   font-size: 24px;
 }
 
-.modal-eyebrow { margin: 0 0 2px; font-size: 9px; letter-spacing: .22em; }
-.location-modal h2 { margin: 0 0 13px; font-family: Allura,cursive; color: #b15b48; font-size: 42px; font-weight: 400; }
+.modal-eyebrow { margin: 0 0 2px; font-size: 11px; letter-spacing: .22em; }
+.location-modal h2 { margin: 0 0 13px; font-family: Allura,cursive; color: #b15b48; font-size: 46px; font-weight: 400; }
 
 .map { display: block; width: 100%; height: 240px; border: 0; border-radius: 10px; background: #eee; }
-.location-copy { display: flex; flex-direction: column; gap: 2px; margin-top: 12px; font-size: 12px; line-height: 1.3; }
+.location-copy { display: flex; flex-direction: column; gap: 2px; margin-top: 12px; font-size: 14px; line-height: 1.35; }
 .location-copy strong { font-weight: 600; }
 .location-copy span { color: #8a6b62; }
 
@@ -343,12 +346,12 @@ button { border: 0; }
   align-items: center;
   justify-content: center;
   margin-top: 13px;
-  padding: 9px 12px;
+  padding: 10px 14px;
   border: 1px solid rgba(132,77,65,.24);
   border-radius: 9px;
   color: #805044;
   text-decoration: none;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .modal-enter-active, .modal-leave-active { transition: opacity 220ms ease; }
@@ -358,7 +361,7 @@ button { border: 0; }
 
 @media (max-width:600px) {
   .page { padding: 0; }
-  .invitation-shell { width: 100vw; height: 100svh; min-height: 650px; box-shadow: none; }
+  .invitation-shell { width: 100vw; height: 100vh; height: 100dvh; box-shadow: none; }
   .content { padding: 25px 20px; }
 }
 
