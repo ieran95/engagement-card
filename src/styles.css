@@ -109,6 +109,7 @@ button { border: 0; }
   font-weight: 500;
   letter-spacing: .23em;
   line-height: 1.45;
+  text-shadow: 0 1px 1px rgba(255,250,246,.9), 0 1px 8px rgba(255,250,246,.7);
 }
 
 .names {
@@ -121,7 +122,7 @@ button { border: 0; }
   font-size: clamp(60px,15vw,92px);
   font-weight: 400;
   line-height: .78;
-  text-shadow: 0 1px 0 rgba(255,255,255,.45);
+  text-shadow: 0 1px 0 rgba(255,255,255,.8), 0 1px 8px rgba(255,250,246,.75);
 }
 
 .names small {
@@ -133,21 +134,25 @@ button { border: 0; }
 }
 
 .date-row {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  width: min(100%,330px);
-  margin-top: 29px;
+  justify-content: center;
+  width: min(100%, 250px);
+  margin: 29px auto 0;
   color: #865247;
+  text-shadow: 0 1px 1px rgba(255,250,246,.9), 0 1px 8px rgba(255,250,246,.7);
 }
 
 .date-side {
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
   font-size: 13px;
+  font-weight: 700;
   letter-spacing: .08em;
+  white-space: nowrap;
 }
 
 .date-side i {
@@ -157,26 +162,29 @@ button { border: 0; }
 }
 
 .date-main {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-items: baseline;
-  gap: 7px;
-  padding: 0 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 3px 15px;
   border-left: 1px dotted rgba(111,64,54,.55);
   border-right: 1px dotted rgba(111,64,54,.55);
   line-height: 1;
+  text-align: center;
 }
 
-.date-main .month { font-size: 11px; }
-.date-main strong { font-size: 36px; font-weight: 500; }
-.date-main span:last-child { font-size: 12px; }
+.date-main .month { font-size: 11px; font-weight: 700; letter-spacing: .14em; }
+.date-main strong { font-size: 36px; font-weight: 700; line-height: 1; }
+.date-main span:last-child { font-size: 12px; font-weight: 700; letter-spacing: .08em; }
 
 .description {
   width: min(100%,315px);
   margin: 20px 0 16px;
-  color: #805044;
+  color: #7a463a;
   font-size: 14px;
   line-height: 1.45;
+  text-shadow: 0 1px 1px rgba(255,250,246,.9), 0 1px 8px rgba(255,250,246,.7);
 }
 
 .location-hint {
@@ -185,6 +193,7 @@ button { border: 0; }
   font-size: 12px;
   font-style: italic;
   letter-spacing: .02em;
+  text-shadow: 0 1px 1px rgba(255,250,246,.9), 0 1px 6px rgba(255,250,246,.7);
 }
 .hint-arrow {
   display: inline-block;
@@ -399,18 +408,49 @@ button { border: 0; }
 .location-copy strong { font-weight: 600; }
 .location-copy span { color: #8a6b62; }
 
-.maps-link {
+.maps-row {
   display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.maps-link {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 13px;
-  padding: 10px 14px;
-  border: 1px solid rgba(132,77,65,.24);
-  border-radius: 9px;
-  color: #805044;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   text-decoration: none;
-  font-size: 13px;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
+.maps-link:hover {
+  transform: translateY(-2px) scale(1.04);
+}
+.maps-link:active {
+  transform: translateY(0) scale(.98);
+}
+
+.maps-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.maps-link-maps {
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(112, 66, 56, .2);
+}
+.maps-link-maps .maps-icon { fill: #4285F4; }
+.maps-link-maps:hover { box-shadow: 0 8px 20px rgba(66, 133, 244, .35); }
+
+.maps-link-waze {
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(112, 66, 56, .2);
+}
+.maps-link-waze .maps-icon { fill: #33CCFF; }
+.maps-link-waze:hover { box-shadow: 0 8px 20px rgba(51, 204, 255, .4); }
 
 .modal-enter-active, .modal-leave-active { transition: opacity 220ms ease; }
 .modal-enter-from, .modal-leave-to { opacity: 0; }
