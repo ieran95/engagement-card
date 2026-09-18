@@ -16,7 +16,7 @@ const invitation = {
   dateMonth: "NOV.",
   dateYear: "2026",
   day: "Sabtu",
-  time: "11:00AM",
+  time: "12:00 PM",
   message:
     "Dengan penuh kesyukuran dan rasa rendah diri, kami menjemput kehadiran anda semua ke majlis pertunangan kami.",
   songTitle: "A Thousand Years (Instrumental)",
@@ -170,7 +170,7 @@ function handleEscape(event) {
  * first interaction anywhere on the invitation.
  */
 function handleFirstInteraction() {
-  startBackgroundMusic();
+  // startBackgroundMusic();
 }
 
 function addFirstInteractionListeners() {
@@ -239,7 +239,7 @@ onUnmounted(() => {
         ></span>
       </div>
 
-      <div class="background-switcher" aria-label="Pilih latar belakang">
+      <!-- <div class="background-switcher" aria-label="Pilih latar belakang">
         <button
           v-for="(background, index) in backgrounds"
           :key="background.src"
@@ -251,7 +251,7 @@ onUnmounted(() => {
         >
           <img :src="background.src" :alt="background.name" />
         </button>
-      </div>
+      </div> -->
 
       <!-- <button
         class="music-fab"
@@ -335,7 +335,7 @@ onUnmounted(() => {
                 <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
               </svg>
             </button> -->
-            <button class="play-button" type="button" @click="toggleMusic">
+            <!-- <button class="play-button" type="button" @click="toggleMusic">
               <svg
                 v-if="musicPlaying"
                 class="pause-icon"
@@ -352,7 +352,7 @@ onUnmounted(() => {
               >
                 <path d="M8 5v14l11-7z" />
               </svg>
-            </button>
+            </button> -->
             <!-- <button type="button" aria-label="Seterusnya">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 6l8.5 6L6 18zM16 6h2v12h-2z" />
@@ -362,12 +362,12 @@ onUnmounted(() => {
         </div>
       </div>
 
-      <audio
+      <!-- <audio
         id="backgroundMusic"
         src="/music/instrumental.mp3"
         preload="auto"
         loop
-      ></audio>
+      ></audio> -->
     </section>
 
     <Transition name="modal">
