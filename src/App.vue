@@ -25,8 +25,8 @@ const invitation = {
   locationAddress: "",
 };
 
-// Change this to your real venue.
-const locationQuery = "Paka, Terengganu, Malaysia";
+const lat = 4.6289880682824105;
+const lng = 103.43156587208392; // Replace with your venue's coordinates
 
 const backgroundModules = import.meta.glob(
   "/public/backgrounds/background-*.*",
@@ -60,21 +60,17 @@ const currentImage = computed(() => backgrounds[currentBackground.value].src);
 
 const mapUrl = computed(
   () =>
-    `https://www.google.com/maps?q=${encodeURIComponent(
-      locationQuery,
-    )}&output=embed`,
+    `https://www.google.com/maps?q=${lat},${lng}&output=embed`,
 );
 
 const mapsUrl = computed(
   () =>
-    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-      locationQuery,
-    )}`,
+    `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`,
 );
 
 const wazeUrl = computed(
   () =>
-    `https://waze.com/ul?q=${encodeURIComponent(locationQuery)}&navigate=yes`,
+    `https://waze.com/ul?ll=${lat},${lng}&navigate=yes`,
 );
 
 function changeBackground(index) {
@@ -393,7 +389,7 @@ onUnmounted(() => {
             <strong>{{ invitation.locationName }}</strong>
             <span>{{ invitation.locationAddress }}</span>
           </div>
-<div class="maps-row">
+          <div class="maps-row">
             <a
               class="maps-link maps-link-maps"
               :href="mapsUrl"
